@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-12">
+        <img class="logo" src="/public/assets/images/burger.jpg" alt="burgerPic">
+        <h1>Eat The Burger!</h1>
+    </div>
+</div>
+
+
+<ul>
+    {{#each cats}}
+    {{#unless sleepy}}
+    {{> cats/cat-block sleep=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Cats that are sleepy!</h2>
+
+
+
+<div class="row">
+    <div class="col-12">
+        <form class="create-form">
+            <div class="form-group">
+                <label for="burgerName">Enter a burger name you want to eat and click "Submit"</label>
+                <input type="text" id="burgerName" class="form-control" placeholder="Ex. Quarter Pounder" required>
+            </div>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-6">
+        <div class="card" id="burgerList">
+            <div class="card-header">Burger List</div>
+            <div class="card-body">
+                <ul>
+                    {{#each yummyBurger}}
+                    {{#unless devoured}}
+                    {{> yummyBurger/burgerBlock devoured=false}}
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- <div class="row"> --}}
+<div class="col-12 col-md-6">
+    <div class="card" id="devouredList">
+        <div class="card-header">Devoured Burgers</div>
+        <div class="card-body">
+            <ul>
+                {{#each yummyBurger}}
+                {{#if devoured}}
+                {{> yummyBurger/burgerBlock devoured=true
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+{{!-- </div> --}}
