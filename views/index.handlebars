@@ -1,22 +1,9 @@
 <div class="row">
     <div class="col-12">
-        <img class="logo" src="/public/assets/images/burger.jpg" alt="burgerPic">
+        <img class="logo" src="/assets/images/burger.jpg" alt="burgerPic">
         <h1>Eat The Burger!</h1>
     </div>
 </div>
-
-
-<ul>
-    {{#each cats}}
-    {{#unless sleepy}}
-    {{> cats/cat-block sleep=true}}
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Cats that are sleepy!</h2>
-
-
 
 <div class="row">
     <div class="col-12">
@@ -55,8 +42,8 @@
             <ul>
                 {{#each yummyBurger}}
                 {{#if devoured}}
-                {{> yummyBurger/burgerBlock devoured=true
-                    {{/if}}
+                {{> yummyBurger/burgerBlock devoured=true}}
+                {{/if}}
                 {{/each}}
             </ul>
         </div>
