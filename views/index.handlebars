@@ -5,10 +5,10 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row text-center">
     <div class="col-12">
         <form class="create-form">
-            <div class="form-group">
+            <div class="form-group text-center">
                 <label for="burgerName">Enter a burger name you want to eat and click "Submit"</label>
                 <input type="text" id="burgerName" class="form-control" placeholder="Ex. Quarter Pounder" required>
             </div>
@@ -17,36 +17,35 @@
     </div>
 </div>
 
+<br>
+
 <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-4">
         <div class="card" id="burgerList">
             <div class="card-header">Burger List</div>
             <div class="card-body">
                 <ul>
-                    {{#each yummyBurger}}
+                    {{#each burgers}}
                     {{#unless devoured}}
-                    {{> yummyBurger/burgerBlock devoured=false}}
+                    {{> burgers/burgerBlock devoured=false}}
                     {{/unless}}
                     {{/each}}
                 </ul>
             </div>
         </div>
     </div>
-</div>
-
-{{!-- <div class="row"> --}}
-<div class="col-12 col-md-6">
-    <div class="card" id="devouredList">
-        <div class="card-header">Devoured Burgers</div>
-        <div class="card-body">
-            <ul>
-                {{#each yummyBurger}}
-                {{#if devoured}}
-                {{> yummyBurger/burgerBlock devoured=true}}
-                {{/if}}
-                {{/each}}
-            </ul>
+    <div class="col-4 float-center">
+        <div class="card" id="devouredList">
+            <div class="card-header">Devoured Burgers</div>
+            <div class="card-body">
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burgers/burgerBlock devoured=true}}
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
         </div>
     </div>
 </div>
-{{!-- </div> --}}

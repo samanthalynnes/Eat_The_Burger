@@ -1,11 +1,11 @@
-$("#submit").submit(event => {
+$(".create-form").on("submit", (event) => {
     event.preventDefault();
 
-    const yummyBurger = {
-        burgerName: $("$burgerName").val().trim()
+    const burger = {
+        burgerName: $("#burgerName").val().trim()
     }
 
-    $.post("/api/burgers", yummyBurger, () => {
+    $.post("/api/burgers", burger, () => {
         location.reload();
     })
 });
