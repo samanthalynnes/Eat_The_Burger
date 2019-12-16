@@ -1,5 +1,7 @@
 // Set up MySQL connection.
-let mysql = require("mysql");
+require("dotenv").config();
+
+const mysql = require("mysql");
 
 let connection;
 
